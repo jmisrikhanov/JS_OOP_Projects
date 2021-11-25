@@ -53,12 +53,12 @@ Gallery.prototype.openModal = function (selectedImage, list) {
 
 Gallery.prototype.setMainImage = function (selectedImage) {
   this.modalImg.src = selectedImage.src;
-  this.closeBtn.removeEventListener("click", this.closeModal);
+  this.imageName.textContent = selectedImage.title;
 };
 
 Gallery.prototype.closeModal = function () {
   this.modal.classList.remove("open");
-  this.closeModal = this.closeModal.bind(this);
+  this.closeBtn.removeEventListener("click", this.closeModal);
   this.nextBtn.removeEventListener("click", this.nextImage);
   this.prevBtn.removeEventListener("click", this.prevImage);
   this.modalImages.removeEventListener("click", this.chooseImage);
